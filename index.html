@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Opton</title>
+<style>
+  /* Colors */
+  :root {
+    --navy: #001f3f;
+    --harsh-red: #cc0000;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --gray-text: #222222;
+    --accent-light: #ff4d4d;
+  }
+
+  /* Reset & base */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: var(--light-gray);
+    color: var(--gray-text);
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--harsh-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--accent-light);
+  }
+
+  /* Header */
+  header {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  }
+
+  header h1 {
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+  }
+
+  nav {
+    margin-top: 0.8rem;
+  }
+
+  nav a {
+    margin: 0 1.25rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 5rem 2rem 6rem;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1571127238186-21e8e8f1d5a4?auto=format&fit=crop&w=1470&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .hero::after {
+    content: "";
+    position: absolute;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
+  }
+
+  .hero h2,
+  .hero p {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    letter-spacing: 0.03em;
+  }
+
+  /* Main content container */
+  .container {
+    max-width: 1100px;
+    margin: -4rem auto 3rem;
+    background-color: var(--white);
+    padding: 3rem 2rem 4rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,50,0.15);
+  }
+
+  /* Sections */
+  section {
+    margin-bottom: 3.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+    border-bottom: 3px solid var(--harsh-red);
+    color: var(--navy);
+    padding-bottom: 0.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+
+  /* Services */
+  .services-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.75rem;
+    flex-wrap: wrap;
+  }
+
+  .service {
+    background-color: var(--light-gray);
+    padding: 1.8rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    flex: 1 1 30%;
+    color: var(--navy);
+  }
+
+  .service h4 {
+    margin-top: 0;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Values Section */
+  .values-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 1.8rem;
+  }
+
+  .value-item {
+    background-color: var(--navy);
+    color: var(--white);
+    padding: 1.8rem 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .value-item h4 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Team Section */
+  .team-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .team-member {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    text-align: center;
+    padding: 1.5rem;
+    flex: 1 1 28%;
+    transition: transform 0.3s ease;
+  }
+
+  .team-member:hover {
+    transform: translateY(-8px);
+  }
+
+  .team-member img {
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .team-member h5 {
+    margin-bottom: 0.25rem;
+    color: var(--harsh-red);
+  }
+
+  .team-member p {
+    font-size: 0.95rem;
+    color: #444;
+  }
+
+  /* Contact */
+  #contact p {
+    font-weight: 600;
+    margin: 0.3rem 0;
+  }
+
+  /* Footer */
+  footer {
+    background-color: var(--navy);
+    color: var(--white);
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .services-list {
+      flex-direction: column;
+    }
+    .service {
+      flex: 1 1 100%;
+    }
+    .team-list {
+      flex-direction: column;
+    }
+    .team-member {
+      flex: 1 1 100%;
+      margin-bottom: 2rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Opton</h1>
+  <nav>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#values">Values</a>
+    <a href="#team">Team</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section class="hero" aria-label="Welcome and introduction">
+  <h2>Precision Manufacturing Solutions</h2>
+  <p>Delivering quality and innovation for over 30 years to industries worldwide</p>
+</section>
+
+<div class="container">
+  <section id="about" aria-label="About the company">
+    <h3>About Us</h3>
+    <p>Opton is a trusted leader in precision manufacturing, delivering expert metal fabrication, assembly, and quality assurance to a wide range of industries. Our commitment to innovation and customer satisfaction sets us apart in every project we undertake.</p>
+  </section>
+
+  <section id="services" aria-label="Our manufacturing services">
+    <h3>Our Services</h3>
+    <div class="services-list">
+      <article class="service" aria-labelledby="custom-metal">
+        <h4 id="custom-metal">Custom Metal Fabrication</h4>
+        <p>Utilizing cutting-edge CNC machines and skilled craftsmen, we provide tailored metal cutting, bending, and welding meeting even the tightest tolerances.</p>
+      </article>
+      <article class="service" aria-labelledby="assembly">
+        <h4 id="assembly">Assembly Solutions</h4>
+        <p>From component assembly to full product integration, our streamlined processes ensure flawless results delivered on schedule.</p>
+      </article>
+      <article class="service" aria-labelledby="quality-assurance">
+        <h4 id="quality-assurance">Quality Assurance</h4>
+        <p>Our rigorous quality control protocols include advanced inspection technologies and testing to guarantee products meet all standards.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="values" aria-label="Company values">
+    <h3>Our Values</h3>
+    <div class="values-list">
+      <div class="value-item">
+        <h4>Integrity</h4>
+        <p>We uphold honesty and transparency in every operation and customer interaction.</p>
+      </div>
+      <div class="value-item">
+        <h4>Innovation</h4>
+        <p>We continuously explore new technologies and methods to improve manufacturing efficiency.</p>
+      </div>
+      <div class="value-item">
+        <h4>Quality</h4>
+        <p>Excellence is our standard; we never compromise on delivering superior products.</p>
+      </div>
+      <div class="value-item">
+        <h4>Customer Focus</h4>
+        <p>Your satisfaction drives our efforts from project start to finish.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" aria-label="Meet our team">
+    <h3>Meet Our Team</h3>
+    <div class="team-list">
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/31.jpg" alt="John Doe, CEO" />
+        <h5>John Doe</h5>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Smith, Head of Operations" />
+        <h5>Sarah Smith</h5>
+        <p>Head of Operations</p>
+      </div>
+      <div class="team-member">
+        <img src="https://randomuser.me/api/portraits/men/56.jpg" alt="Mike Johnson, Lead Engineer" />
+        <h5>Mike Johnson</h5>
+        <p>Lead Engineer</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-label="Contact information">
+    <h3>Contact Us</h3>
+    <p>Have questions or want to request a quote? Reach out to our team!</p>
+    <p>Email: <a href="mailto:info@opton.com">info@opton.com</a></p>
+    <p>Phone: <a href="tel:+15551234567">(555) 123-4567</a></p>
+    <p>Address: 123 Industry Lane, Manufacturing City, USA</p>
+  </section>
+</div>
+
+<footer>
+  &copy; 2025 Opton. All rights reserved.
+</footer>
+</body>
+</html>
